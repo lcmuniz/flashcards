@@ -1,5 +1,11 @@
+use crate::ui::cli::executar_cli;
+
 mod domain;
+mod storage;
+mod ui;
 
 fn main() {
-    println!("Hello, world!");
+    if let Err(e) = executar_cli() {
+        eprintln!("Erro: {:?}", e);
+    }
 }
